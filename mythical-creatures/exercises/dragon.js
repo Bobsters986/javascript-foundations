@@ -20,5 +20,7 @@ module.exports = {
     }
     return dragon
   },
-  // findFireBreathers
+  findFireBreathers : function(dragons) {
+    return dragons.filter(dragon => dragon.temperment === 'aggressive')
+  }
 }
