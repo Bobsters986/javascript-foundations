@@ -13,8 +13,12 @@ module.exports = {
   greetRider : function(dragon) {
     return `Hi, ${dragon.rider}!`
   },
-  eat : function() {
-    return this.hungry = false
-    },
+  eat : function(dragon) {
+    dragon.timesEaten++
+    if (dragon.timesEaten >= 3) {
+      dragon.hungry = false
+    }
+    return dragon
+  },
   // findFireBreathers
 }
