@@ -5,7 +5,9 @@ module.exports = {
     return {
       name: name,
       rider: rider,
-      temperment: temperment
+      temperment: temperment,
+      timesEaten: 0,
+      hungry: true
     }
   },
   greetRider : function(dragon) {
