@@ -6,7 +6,8 @@ function createHobbit(name = 'unknown', age = 0) {
     name: name,
     age: age,
     isAdult: isAdult,
-    isOld: isOld
+    isOld: isOld,
+    acquaintances: []
   }
 }
 
@@ -25,10 +26,26 @@ function getRing(hobbit) {
   }
 }
 
+function meetPeople(hobbit, people) {
+  people.forEach(person => hobbit.acquaintances.push(person));
+  return hobbit
+}
+
+function findFriends(hobbit) {
+  // return hobbit.acquaintances.filter(person => person.relationship === 'friend').map(person => person.name)
+  var friends = [];
+  hobbit.acquaintances.forEach(person => {
+    if (person.relationship === 'friend') {
+      friends.push(person.name);
+    }
+  });
+  return friends
+}
+
 module.exports = {
   createHobbit,
   celebrateBirthday,
   getRing,
-  // meetPeople, 
-  // findFriends
+  meetPeople, 
+  findFriends
 }
